@@ -1,0 +1,21 @@
+# Database Credentials (CRITICAL)
+backend/config.php
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# PHP/XAMPP Logs
+*.log
+error_log
+backend/php_error.log
+
+# Uploaded Content (Keep folders, ignore files)
+uploads/images/*
+agreements/*
+!uploads/images/.htaccess
+!agreements/.htaccess
+
+# Local IDE settings
+.vscode/
+.idea/

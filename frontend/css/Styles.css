@@ -1,0 +1,329 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 70px 1fr;
+    height: 100vh;
+    background: #f4f6f9;
+}
+
+/* HEADER */
+header {
+    grid-area: header;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 10;
+}
+
+/* SIDEBAR */
+aside {
+    grid-area: sidebar;
+    background: #1e293b;
+    padding: 20px 15px;
+    color: white;
+}
+
+#sidebarMenu {
+    list-style: none;
+    margin-top: 20px;
+}
+
+#sidebarMenu button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: #cbd5e1;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+#sidebarMenu button:hover {
+    background: #334155;
+    color: white;
+}
+
+#sidebarMenu button.active {
+    background: #3b82f6;
+    color: white;
+    font-weight: 600;
+}
+
+/* MAIN CONTENT AREA */
+main {
+    grid-area: main;
+    padding: 25px;
+    overflow-y: auto;
+}
+
+/* GRID SYSTEM */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* PROPERTY CARDS  */
+.card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: #e5e7eb;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.price {
+    color: #3b82f6;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* STATUS BADGES */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* FORMS */
+.styled-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* BUTTON TYPES */
+button {
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+    border: none;
+}
+
+.btn-primary,
+button[onclick*="submitRequest"],
+button[type="submit"] {
+    background: #3b82f6;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+.btn-success,
+button[onclick*="approve"] {
+    background: #22c55e;
+    color: white;
+}
+
+.btn-danger,
+button[onclick*="reject"] {
+    background: #ef4444;
+    color: white;
+}
+
+
+
+/* AUTHENTICATION PAGES */
+
+/* Center layout  for auth pages */
+body.auth-page {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f9;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container wrapper */
+body.auth-page .auth-container {
+    position: relative;
+    width: 350px;
+}
+
+/* Card  */
+body.auth-page form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+body.auth-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+body.auth-page input,
+body.auth-page select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+body.auth-page input:focus,
+body.auth-page select:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Button */
+body.auth-page button {
+    width: 100%;
+    padding: 12px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+body.auth-page button:hover {
+    background: #2563eb;
+}
+
+/* back to home button */
+body.auth-page .btn-home {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #e5e7eb;
+    color: #111827;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #d1d5db;
+    transition: 0.2s;
+}
+
+body.auth-page .btn-home:hover {
+    background: #d1d5db;
+}
+
+/* Messages */
+body.auth-page #formMessage {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Bottom link */
+body.auth-page .auth-link {
+    text-align: center;
+    margin-top: 12px;
+}
+
+/* Scoped links (avoid affecting buttons) */
+body.auth-page .auth-link a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+body.auth-page .auth-link a:hover {
+    text-decoration: underline;
+}
+
+body.auth-page .btn-home {
+    position: absolute;
+    top: -40px;
+    left: 0;
+}
+
+
+.badge {
+    display: inline-block;
+    background: #e5e7eb;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #4b5563;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}

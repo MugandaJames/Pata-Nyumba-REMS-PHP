@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pata Nyumba - Register</title>
+    <link rel="stylesheet" href="css/Styles.css">
+</head>
+
+<body class="auth-page">
+    <div class="auth-container">
+
+        <a href="index.html" class="btn-home">← Back to Home</a>
+
+        <h1>Register</h1>
+
+        <form id="registerForm">
+            <input type="text" id="full_name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+
+            <select id="role" required>
+                <option value="customer" selected>Customer</option>
+                <option value="agent">Agent</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p id="formMessage"></p>
+
+        <p class="auth-link">
+            Already have an account?
+            <a href="login.html">Login here</a>
+        </p>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

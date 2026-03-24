@@ -1,0 +1,11 @@
+# 1. Prevent directory browsing (don't show file list)
+Options -Indexes
+
+# 2. Deny all direct web access to files in this folder
+Order Deny,Allow
+Deny from all
+
+# 3. Prevent execution of scripts (in case someone manages to upload a .php file)
+RemoveHandler .php .phtml .php3
+RemoveType .php .phtml .php3
+php_flag engine off
